@@ -1,0 +1,774 @@
+{
+	"info": {
+		"_postman_id": "44ba5373-88da-4e76-ac34-14f52503c2aa",
+		"name": "chat-bot-data",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "query",
+			"item": [
+				{
+					"name": "queryGetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/chatbot",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbot"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "queryGetAll",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/chatbot",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"chatbot"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:25:44 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "89"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"6\",\n        \"question\": \"hii\",\n        \"solution\": \"Hello\"\n    },\n    {\n        \"id\": \"2\",\n        \"question\": \"j\",\n        \"solution\": \"5\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question\":\"I need help?\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/chatbot",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbot"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "post",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\":\"I need help?\",\r\n    \"solution\":\"Yeah I am there for you\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/chatbot",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"chatbot"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:32:34 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6462072c-2c0a-4abb-bed5-2b9aa977ca98\",\n    \"question\": \"I-need-help?\",\n    \"solution\": \"Yeah I am there for you\"\n}"
+						},
+						{
+							"name": "error case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"solution\":\"Yeah I am there for you\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/chatbot",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"chatbot"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:35:20 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"BAD REQUEST\",\n    \"reason\": \"Missing Field Question\"\n}"
+						},
+						{
+							"name": "error case",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"question\":\"I need help?\"\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/chatbot",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"chatbot"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:35:57 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"BAD REQUEST\",\n    \"reason\": \"Missing Field Solution\"\n}"
+						}
+					]
+				},
+				{
+					"name": "frequent-Questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/chatbot/frequentQuestions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbot",
+								"frequentQuestions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/chatbot/frequentQuestions",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"chatbot",
+										"frequentQuestions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:38:18 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "307"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"6\",\n        \"question\": \"hii\",\n        \"solution\": \"Hello\"\n    },\n    {\n        \"id\": \"2\",\n        \"question\": \"j\",\n        \"solution\": \"5\"\n    },\n    {\n        \"id\": \"6462072c-2c0a-4abb-bed5-2b9aa977ca98\",\n        \"question\": \"I-need-help?\",\n        \"solution\": \"Yeah I am there for you\"\n    },\n    {\n        \"id\": \"76ba0673-f7b2-4e7e-82e5-473966377864\",\n        \"question\": \"I-need-help?\",\n        \"solution\": \"Yeah I am there for you\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "patch",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "patch",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"count\":4\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/chatbot/I-need-help?",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"chatbot",
+										"I-need-help"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:42:33 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "11"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"count\": 4\n}"
+						}
+					]
+				},
+				{
+					"name": "getbyquestion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/chatbot/I-need-help?",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"chatbot",
+								"I-need-help"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/chatbot/I-need-help?",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"chatbot",
+										"I-need-help"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:44:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "118"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"6462072c-2c0a-4abb-bed5-2b9aa977ca98\",\n    \"question\": \"I-need-help?\",\n    \"solution\": \"Yeah I am there for you\",\n    \"count\": 4\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Durga\",\r\n    \"lastName\":\"Chikkala\",\r\n    \"dob\":\"17-04-2001\",\r\n    \"gender\":\"MALE\",\r\n    \"email\":\"chdurga2001@gmail.com\",\r\n    \"phone\":\"6304566534\",\r\n    \"password\":\"Durga@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/user/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:46:55 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"32f7e7b3-4495-438c-a8a3-2c2f53fd5d76\",\n    \"firstName\": \"Durga\",\n    \"lastName\": \"Chikkala\",\n    \"dob\": \"17-04-2001\",\n    \"phone\": \"6304566534\",\n    \"gender\": \"MALE\",\n    \"email\": \"chdurga2001@gmail.com\",\n    \"password\": \"Durga@123\"\n}"
+						},
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \r\n    \"lastName\":\"Chikkala\",\r\n    \"dob\":\"17-04-2001\",\r\n    \"gender\":\"MALE\",\r\n    \"email\":\"chdurga2001@gmail.com\",\r\n    \"phone\":\"6304566534\",\r\n    \"password\":\"Durga@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/user/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:47:33 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"code\": \"BAD REQUEST\",\n    \"reason\": \"Missing field firstName\"\n}"
+						},
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\":\"Durga\",\r\n    \"lastName\":\"Chikkala\",\r\n    \"dob\":\"17-04-2001\",\r\n    \"gender\":\"MALE\",\r\n   \r\n    \"phone\":\"6304566534\",\r\n    \"password\":\"Durga@123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/user/signup",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:47:58 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 400,\n    \"code\": \"BAD REQUEST\",\n    \"reason\": \"Invalid Email\"\n}"
+						}
+					]
+				},
+				{
+					"name": "user details",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "user details",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/user/32f7e7b3-4495-438c-a8a3-2c2f53fd5d76",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"32f7e7b3-4495-438c-a8a3-2c2f53fd5d76"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:48:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "198"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"32f7e7b3-4495-438c-a8a3-2c2f53fd5d76\",\n    \"firstName\": \"Durga\",\n    \"lastName\": \"Chikkala\",\n    \"dob\": \"17-04-2001\",\n    \"phone\": \"6304566534\",\n    \"gender\": \"MALE\",\n    \"email\": \"chdurga2001@gmail.com\",\n    \"password\": \"Durga@123\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/user/login?email=chdurga2001@gmail.com&password=durga@1\\",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"login"
+									],
+									"query": [
+										{
+											"key": "email",
+											"value": "chdurga2001@gmail.com"
+										},
+										{
+											"key": "password",
+											"value": "durga@1\\"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:52:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "196"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"32f7e7b3-4495-438c-a8a3-2c2f53fd5d76\",\n    \"firstName\": \"Durga\",\n    \"lastName\": \"Chikkala\",\n    \"dob\": \"17-04-2001\",\n    \"phone\": \"6304566534\",\n    \"gender\": \"MALE\",\n    \"email\": \"chdurga2001@gmail.com\",\n    \"password\": \"durga@1\"\n}"
+						}
+					]
+				},
+				{
+					"name": "patch",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\":\"durga@1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/user/32f7e7b3-4495-438c-a8a3-2c2f53fd5d76",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"32f7e7b3-4495-438c-a8a3-2c2f53fd5d76"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:51:06 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "22"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"password\": \"durga@1\"\n}"
+						},
+						{
+							"name": "error",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\":\"durga@1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/user/32f7e7b3-4495-438c-a8a3-2c2f53fd5d7",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"user",
+										"32f7e7b3-4495-438c-a8a3-2c2f53fd5d7"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 29 Jan 2023 17:51:27 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"statusCode\": 404,\n    \"code\": \"NOT FOUND\",\n    \"reason\": \"ID not Found\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
